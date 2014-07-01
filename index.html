@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<title>butt.systems</title>
+<style type="text/css">
+body { background-color: white; }
+#butts{ margin: auto; text-align: center; font-size: 8em; margin-top: 1em; }
+.fore-cheek { z-index: 10; background-color: white; position: relative; } 
+.fore-cheek.left  { padding-left: 300px; position-left: -300px; }
+.fore-cheek.right { padding-right: 300px; position-right: -300px; }
+#poop { z-index: -5; position: relative; }
+.rear-cheek { z-index: -10; background-color: white; position: relative; }
+</style>
+
+</head>
+<body>
+<div id="butts">
+<span class="fore-cheek left">)</span><span class="rear-cheek">)</span> <span id="poop">&lt;&gt;</span> <span class="rear-cheek">(</span><span class="fore-cheek right">(</span>
+</div>
+<script type="text/javascript">
+<!--
+var tl = null;
+
+function loopPoop()
+{
+  var elem = document.getElementById("poop"),
+    radius = 80,
+    va = 3,
+    cx = 230,
+    ang = 0,
+    currTime = 0,
+    playing = false;
+
+
+  function backAndForth(time)
+  {
+    var x,
+    dt = time - currTime;
+
+    ang += va*dt/3000;
+    if (ang > 5)
+    {
+      ang -= 2*Math.PI;
+    }
+    x = cx * Math.cos(ang);  // MATH
+
+    elem.style.left = x + "px"; 
+
+    currTime = time;
+    if (playing)
+    {
+      requestAnimationFrame(backAndForth);
+    }
+  };
+
+  this.play = function()
+  {
+    currTime = Date.now();
+    playing = true;
+    requestAnimationFrame(backAndForth);
+  };
+
+}
+tl = new loopPoop();
+tl.play();
+//-->
+</script> 
+</body>
