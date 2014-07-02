@@ -3,20 +3,40 @@
 <head>
 <title>butt.systems</title>
 <style type="text/css">
-body { background-color: white; }
-#butts{ margin: auto; text-align: center; font-size: 8em; margin-top: 1em; }
+body { background-color: white; font-size: 15px; }
+#butts { margin: auto; text-align: center; font-size: 10em; margin-top: 1em; }
+#left-butt  { padding-left: 15%; left: 15%; }
+#right-butt  { padding-right: 15%; right: 15%; }
+#left-cover { z-index: 5; background-color: white; width: 35%; height: 100%; position: absolute; top: 0px; left: 0px; }
+#right-cover { z-index: 5; background-color: white; width: 35%; height: 100%; position: absolute; top: 0px; right: 0px; }
 .fore-cheek { z-index: 10; background-color: white; position: relative; } 
-.fore-cheek.left  { padding-left: 300px; position-left: -300px; }
-.fore-cheek.right { padding-right: 300px; position-right: -300px; }
-#poop { z-index: -5; position: relative; }
 .rear-cheek { z-index: -10; background-color: white; position: relative; }
+#poop { z-index: -5; position: relative; }
+@media only screen and (max-width: 1025px) {
+      /* tablets */
+      body { background-color: white; font-size: 12px; }
+}
+@media only screen and (max-width: 800px) {
+      /* tablets */
+      body { background-color: white; font-size: 10px; }
+}
+@media only screen and (max-width: 600px) {
+      /* tablets */
+      body { background-color: white; font-size: 8px; }
+}
+@media only screen and (max-width: 400px) {
+      /* tablets */
+      body { background-color: white; font-size: 5px; }
+}
 </style>
 
 </head>
 <body>
 <div id="butts">
-<span class="fore-cheek left">)</span><span class="rear-cheek">)</span> <span id="poop">&lt;&gt;</span> <span class="rear-cheek">(</span><span class="fore-cheek right">(</span>
+    <span id="left-butt"><span class="fore-cheek left">)</span><span class="rear-cheek">)</span></span> <span id="poop">&lt;&gt;</span> <span id="right-butt"><span class="rear-cheek">(</span><span class="fore-cheek right">(</span></span>
 </div>
+<div id="left-cover">&nbsp;</div>
+<div id="right-cover">&nbsp;</div>
 <script type="text/javascript">
 <!--
 var tl = null;
@@ -26,7 +46,7 @@ function loopPoop()
   var elem = document.getElementById("poop"),
     radius = 80,
     va = 3,
-    cx = 230,
+    cx = 2,
     ang = 0,
     currTime = 0,
     playing = false;
@@ -44,7 +64,7 @@ function loopPoop()
     }
     x = cx * Math.cos(ang);  // MATH
 
-    elem.style.left = x + "px"; 
+    elem.style.left = x + "em"; 
 
     currTime = time;
     if (playing)
