@@ -5,87 +5,63 @@
 <title>butt.systems</title>
 <!-- inspired by the movie Me and You and Everyone We Know by Miranda July : no copyright intended -->
 <style type="text/css">
-body { background-color: white; font-size: 15px; }
-#butts { margin: auto; text-align: center; font-size: 10em; margin-top: 1em; }
-#left-butt  { padding-left: 15%; left: 15%; }
-#right-butt  { padding-right: 15%; right: 15%; }
-#left-cover { z-index: 5; background-color: white; width: 35%; height: 100%; position: absolute; top: 0px; left: 0px; }
-#right-cover { z-index: 5; background-color: white; width: 35%; height: 100%; position: absolute; top: 0px; right: 0px; }
-.fore-cheek { z-index: 10; background-color: white; position: relative; } 
-.rear-cheek { z-index: -10; background-color: white; position: relative; }
-#poop { z-index: -5; position: relative; }
-@media only screen and (max-width: 1025px) {
-      /* tablets */
-      body { background-color: white; font-size: 12px; }
+body {
+  background-color: white;
+  font-size: 13vw;
 }
-@media only screen and (max-width: 800px) {
-      /* tablets */
-      body { background-color: white; font-size: 10px; }
+
+#butts {
+  margin: auto;
+  text-align: center;
+  margin-top: 1em;
 }
-@media only screen and (max-width: 600px) {
-      /* tablets */
-      body { background-color: white; font-size: 8px; }
+
+span { display: inline-block; }
+
+.cheek {
+  background-color: white;
+  position: relative;
+
+  height: 1em;
+  width: 1em;
+  border: 0px solid black;
+  border-radius: 5em;
 }
-@media only screen and (max-width: 400px) {
-      /* tablets */
-      body { background-color: white; font-size: 5px; }
+
+.left.rear.cheek  { margin-left: -0.5em; }
+.right.rear.cheek { margin-right: -0.5em; }
+
+.left.cheek  { border-right-width: 0.1em; }
+.right.cheek { border-left-width: 0.1em;  }
+
+.fore.cheek { z-index: 10; }
+.rear.cheek { z-index: -10; }
+
+/* It favors the right butt, ever so slightly. */
+@keyframes poop-loop {
+  0%   { left: -1.5em; }
+  100% { left: 1.5em;  }
+}
+
+#poop {
+  z-index: -5;
+  position: relative;
+  left: 0em;
+
+  vertical-align: top;
+
+  animation-name: poop-loop;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 }
 </style>
-
+<script src="prefixfree.min.js"></script>
 </head>
 <body>
 <div id="butts">
-    <span id="left-butt"><span class="fore-cheek left">)</span><span class="rear-cheek">)</span></span> <span id="poop">&lt;&gt;</span> <span id="right-butt"><span class="rear-cheek">(</span><span class="fore-cheek right">(</span></span>
+    <span class="left butt"><span class="left fore cheek"></span><span class="left rear cheek"></span></span> <span id="poop">&lt;&gt;</span> <span id="right butt"><span class="right rear cheek"></span><span class="right fore cheek"></span></span>
 </div>
-<div id="left-cover">&nbsp;</div>
-<div id="right-cover">&nbsp;</div>
-<script type="text/javascript">
-<!--
-var tl = null;
-
-function loopPoop()
-{
-  var elem = document.getElementById("poop"),
-    radius = 80,
-    va = 3,
-    cx = 2,
-    ang = 0,
-    currTime = 0,
-    playing = false;
-
-
-  function backAndForth(time)
-  {
-    var x,
-    dt = time - currTime;
-
-    ang += va*dt/3000;
-    if (ang > 5)
-    {
-      ang -= 2*Math.PI;
-    }
-    x = cx * Math.cos(ang);  // MATH
-
-    elem.style.left = x + "em"; 
-
-    currTime = time;
-    if (playing)
-    {
-      requestAnimationFrame(backAndForth);
-    }
-  };
-
-  this.play = function()
-  {
-    currTime = Date.now();
-    playing = true;
-    requestAnimationFrame(backAndForth);
-  };
-
-}
-tl = new loopPoop();
-tl.play();
-//-->
-</script> 
 </body>
 </html>
