@@ -31,8 +31,15 @@ body {
 .left.cover { left: 0px; }
 .right.cover { right: 0px; }
 
-.fore-cheek { z-index: 10; background-color: white; position: relative; } 
-.rear-cheek { z-index: -10; background-color: white; position: relative; }
+
+.cheek {
+  background-color: white;
+  position: relative;
+}
+
+.fore.cheek { z-index: 10; }
+.rear.cheek { z-index: -10; }
+
 #poop { z-index: -5; position: relative; }
 
 
@@ -57,7 +64,7 @@ body {
 </head>
 <body>
 <div id="butts">
-    <span class="left butt"><span class="fore-cheek left">)</span><span class="rear-cheek">)</span></span> <span id="poop">&lt;&gt;</span> <span id="right butt"><span class="rear-cheek">(</span><span class="fore-cheek right">(</span></span>
+    <span class="left butt"><span class="fore cheek left">)</span><span class="rear cheek">)</span></span> <span id="poop">&lt;&gt;</span> <span id="right butt"><span class="rear cheek">(</span><span class="fore cheek right">(</span></span>
 </div>
 <div class="left cover">&nbsp;</div>
 <div class="right cover">&nbsp;</div>
