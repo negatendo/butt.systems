@@ -39,9 +39,25 @@ body {
 .fore.cheek { z-index: 10; }
 .rear.cheek { z-index: -10; }
 
-#poop { z-index: -5; position: relative; }
-</style>
+/* It favors the right butt, ever so slightly. */
+@keyframes poop-loop {
+  0%   { left: -2em; }
+  100% { left: 2em;  }
+}
 
+#poop {
+  z-index: -5;
+  position: relative;
+  left: 0em;
+
+  animation-name: poop-loop;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+</style>
+<script src="prefixfree.min.js"></script>
 </head>
 <body>
 <div id="butts">
@@ -49,53 +65,5 @@ body {
 </div>
 <div class="left cover">&nbsp;</div>
 <div class="right cover">&nbsp;</div>
-<script type="text/javascript">
-<!--
-var tl = null;
-
-function loopPoop()
-{
-  var elem = document.getElementById("poop"),
-    radius = 80,
-    va = 3,
-    cx = 2,
-    ang = 0,
-    currTime = 0,
-    playing = false;
-
-
-  function backAndForth(time)
-  {
-    var x,
-    dt = time - currTime;
-
-    ang += va*dt/3000;
-    if (ang > 5)
-    {
-      ang -= 2*Math.PI;
-    }
-    x = cx * Math.cos(ang);  // MATH
-
-    elem.style.left = x + "em"; 
-
-    currTime = time;
-    if (playing)
-    {
-      requestAnimationFrame(backAndForth);
-    }
-  };
-
-  this.play = function()
-  {
-    currTime = Date.now();
-    playing = true;
-    requestAnimationFrame(backAndForth);
-  };
-
-}
-tl = new loopPoop();
-tl.play();
-//-->
-</script> 
 </body>
 </html>
