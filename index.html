@@ -39,8 +39,8 @@ span { display: inline-block; }
 
 /* It favors the right butt, ever so slightly. */
 @keyframes poop-loop {
-  0%   { left: -2em; }
-  100% { left: 2em;  }
+  0%   { left: -1.5em; }
+  100% { left: 1.5em;  }
 }
 
 #poop {
@@ -48,7 +48,12 @@ span { display: inline-block; }
   position: relative;
   left: 0em;
 
-  vertical-align: top;
+  background: brown;
+  width: 0.75em;
+  height: 0.25em;
+  border-radius: 1em;
+
+  vertical-align: middle;
 
   animation-name: poop-loop;
   animation-duration: 3s;
@@ -61,7 +66,7 @@ span { display: inline-block; }
 </head>
 <body>
 <div id="butts">
-    <span class="left butt"><span class="left fore cheek"></span><span class="left rear cheek"></span></span> <span id="poop">&lt;&gt;</span> <span id="right butt"><span class="right rear cheek"></span><span class="right fore cheek"></span></span>
+    <span class="left butt"><span class="left fore cheek"></span><span class="left rear cheek"></span></span> <span id="poop"></span> <span id="right butt"><span class="right rear cheek"></span><span class="right fore cheek"></span></span>
 </div>
 <div class="left cover">&nbsp;</div>
 <div class="right cover">&nbsp;</div>
