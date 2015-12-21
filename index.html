@@ -5,15 +5,40 @@
 <title>butt.systems</title>
 <!-- inspired by the movie Me and You and Everyone We Know by Miranda July : no copyright intended -->
 <style type="text/css">
-body { background-color: white; font-size: 15px; }
-#butts { margin: auto; text-align: center; font-size: 10em; margin-top: 1em; }
+body {
+  background-color: white;
+  font-size: 15px;
+}
+
+#butts {
+  margin: auto;
+  text-align: center;
+  font-size: 10em;
+  margin-top: 1em;
+}
+
 #left-butt  { padding-left: 15%; left: 15%; }
 #right-butt  { padding-right: 15%; right: 15%; }
-#left-cover { z-index: 5; background-color: white; width: 35%; height: 100%; position: absolute; top: 0px; left: 0px; }
-#right-cover { z-index: 5; background-color: white; width: 35%; height: 100%; position: absolute; top: 0px; right: 0px; }
+
+.cover  {
+  background-color: white;
+
+  position: absolute;
+  top: 0px;
+
+  height: 100%;
+  width: 35%;
+
+  z-index: 5;
+}
+.left.cover { left: 0px; }
+.right.cover { right: 0px; }
+
 .fore-cheek { z-index: 10; background-color: white; position: relative; } 
 .rear-cheek { z-index: -10; background-color: white; position: relative; }
 #poop { z-index: -5; position: relative; }
+
+
 @media only screen and (max-width: 1025px) {
       /* tablets */
       body { background-color: white; font-size: 12px; }
@@ -35,10 +60,10 @@ body { background-color: white; font-size: 15px; }
 </head>
 <body>
 <div id="butts">
-    <span id="left-butt"><span class="fore-cheek left">)</span><span class="rear-cheek">)</span></span> <span id="poop">&lt;&gt;</span> <span id="right-butt"><span class="rear-cheek">(</span><span class="fore-cheek right">(</span></span>
+    <span class="left butt"><span class="fore-cheek left">)</span><span class="rear-cheek">)</span></span> <span id="poop">&lt;&gt;</span> <span id="right butt"><span class="rear-cheek">(</span><span class="fore-cheek right">(</span></span>
 </div>
-<div id="left-cover">&nbsp;</div>
-<div id="right-cover">&nbsp;</div>
+<div class="left cover">&nbsp;</div>
+<div class="right cover">&nbsp;</div>
 <script type="text/javascript">
 <!--
 var tl = null;
