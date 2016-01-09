@@ -1,67 +1,71 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>butt.systems</title>
-<!-- inspired by the movie Me and You and Everyone We Know by Miranda July : no copyright intended -->
-<style type="text/css">
-body {
-  background-color: white;
-  font-size: 13vw;
-}
+  <head>
+    <meta charset="utf-8">
+    <title>butt.systems</title>
+    <!-- inspired by the movie Me and You and Everyone We Know by Miranda July : no copyright intended -->
+    <style type="text/css">
+      body {
+        background-color: white;
+        font-size: 13vw;
+      }
 
-#butts {
-  margin: auto;
-  text-align: center;
-  margin-top: 1em;
-}
+      #butts {
+        margin: auto;
+        text-align: center;
+        margin-top: 1em;
+      }
 
-span { display: inline-block; }
+      span { display: inline-block; }
 
-.cheek {
-  background-color: white;
-  position: relative;
+      .cheek {
+        background-color: white;
+        position: relative;
 
-  height: 1em;
-  width: 1em;
-  border: 0px solid black;
-  border-radius: 5em;
-}
+        height: 1em;
+        width: 1em;
+        border: 0px solid black;
+        border-radius: 5em;
+      }
 
-.left.rear.cheek  { margin-left: -0.5em; }
-.right.rear.cheek { margin-right: -0.5em; }
+      .left.rear.cheek  { margin-left: -0.5em; }
+      .right.rear.cheek { margin-right: -0.5em; }
 
-.left.cheek  { border-right-width: 0.1em; }
-.right.cheek { border-left-width: 0.1em;  }
+      .left.cheek  { border-right-width: 0.1em; }
+      .right.cheek { border-left-width: 0.1em;  }
 
-.fore.cheek { z-index: 10; }
-.rear.cheek { z-index: -10; }
+      .fore.cheek { z-index: 10; }
+      .rear.cheek { z-index: -10; }
 
-/* It favors the right butt, ever so slightly. */
-@keyframes poop-loop {
-  0%   { left: -1.5em; }
-  100% { left: 1.5em;  }
-}
+      /* It favors the right butt, ever so slightly. */
+      @keyframes poop-loop {
+        0%   { left: -1.5em; }
+        100% { left: 1.5em;  }
+      }
 
-#poop {
-  z-index: -5;
-  position: relative;
-  left: 0em;
+      #poop {
+        position: relative;
+        left: 0em;
 
-  vertical-align: top;
+        vertical-align: top;
 
-  animation-name: poop-loop;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-}
-</style>
-<script src="prefixfree.min.js"></script>
-</head>
-<body>
-<div id="butts">
-    <span class="left butt"><span class="left fore cheek"></span><span class="left rear cheek"></span></span> <span id="poop">&lt;&gt;</span> <span id="right butt"><span class="right rear cheek"></span><span class="right fore cheek"></span></span>
-</div>
-</body>
+        animation-name: poop-loop;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    </style>
+    <script src="prefixfree.min.js"></script>
+  </head>
+  <body>
+    <div id="butts">
+      <span class="left butt"><span class="left fore cheek"></span><span class="left rear cheek"></span></span><span id="poop"><a href="https://www.youtube.com/watch?v=KQoJo81lujk">&lt;&gt;</a></span><span id="right butt"><span class="right rear cheek"></span><span class="right fore cheek"></span></span>
+    </div>
+  </body>
 </html>
